@@ -1,0 +1,201 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebVocabulary2.SiteMaster" %>
+<%@ Register TagPrefix="ajax" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Web Vocabulary</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <ajaxToolkit:ToolkitScriptManager runat="server">
+            <Scripts>
+                <%--Framework Scripts--%>
+
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Path="~/Scripts/jquery-ui-1.11.2.js" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </ajaxToolkit:ToolkitScriptManager>
+
+        <!--site-container -->
+        <div>
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#div-navbar-collapse-menu">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <button type="button" id="searchButton" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#div-navbar-collapse-search">
+                            <span id="spIconSearch" class="glyphicon glyphicon-search"></span>
+                        </button>
+
+                        <div id="div-brand">
+                            <a class="container-brand" href="Default.aspx" runat="server">
+                                <div id="div-brand-img"></div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="div-navbar-collapse-menu">
+
+                        <ul class="nav navbar-nav">
+                            <li><a href="Default.aspx">
+                                <asp:Literal ID="litHome" runat="server" meta:resourcekey="litHome"></asp:Literal></a></li>
+
+                            <li class="dropdown" runat="server" id="liLanguage">
+                                <a href="#" runat="server" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <asp:Literal runat="server" ID="litLanguage" meta:resourcekey="litLanguage"></asp:Literal>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <asp:LinkButton runat="server" ID="lbEnglish" meta:resourcekey="lbEnglish" OnClick="lbEnglish_Click"></asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton runat="server" ID="lbBulgarian" meta:resourcekey="lbBulgarian" OnClick="lbBulgarian_Click"></asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown" runat="server" id="liMessages">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <asp:Literal runat="server" ID="litMessages" meta:resourcekey="litMessages"></asp:Literal>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a runat="server" href="NewMessage">
+                                        <asp:Literal runat="server" ID="litNewMessage" meta:resourcekey="litNewMessage"></asp:Literal></a></li>
+                                    <li role="presentation"><a href="MessageBox.aspx?p=ReceivedMessages">
+                                        <asp:Literal runat="server" ID="litReceived" meta:resourcekey="litReceived"></asp:Literal></a></li>
+                                    <li><a href="MessageBox.aspx?p=SendedMessages" runat="server">
+                                        <asp:Literal runat="server" ID="litSended" meta:resourcekey="litSended"></asp:Literal></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown" runat="server" id="liVocabulary">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <asp:Literal runat="server" ID="litVocabulary" meta:resourcekey="litVocabulary"></asp:Literal>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="AddWord.aspx" runat="server">
+                                        <asp:Literal runat="server" ID="litAddWord" meta:resourcekey="litAddWord"></asp:Literal></a></li>
+                                    <li><a href="AddCategory.aspx" runat="server">
+                                        <asp:Literal runat="server" ID="litAddCategory" meta:resourcekey="litAddCategory"></asp:Literal></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown" runat="server" id="liUsers">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <asp:Literal runat="server" ID="litUsers" meta:resourcekey="litUsers"></asp:Literal>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="ReviewUser.aspx" runat="server">
+                                        <asp:Literal runat="server" ID="litReviewUser" meta:resourcekey="litReviewUser"></asp:Literal></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right" runat="server" id="ulAnonymous">
+                            <li><a runat="server" href="~/Account/Register">
+                                <asp:Literal ID="litRegister" meta:resourcekey="litRegister" runat="server"></asp:Literal></a></li>
+                            <li><a runat="server" href="~/Account/Login">
+                                <asp:Literal ID="litLogin" meta:resourcekey="litLogin" runat="server"></asp:Literal></a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right" runat="server" id="ulLoggedIn">
+                            <li>
+                                <a><asp:Literal ID="litHelloUser" runat="server"></asp:Literal></a>
+                            </li>
+                            <li>
+                                <asp:LinkButton runat="server" ID="lbExit" OnClick="lbExit_Click" meta:resourcekey="lbExit"></asp:LinkButton>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="collapse navbar-collapse " id="div-navbar-collapse-search">
+                        <ul class="nav navbar-right">
+                            <li class="search-box">
+
+                                <span>
+                                    <asp:Panel runat="server" ID="pSearch" CssClass="div-form" DefaultButton="lbSearch">
+
+                                        <input type="text" class="input-search" runat="server" id="inputSearch" meta:resourcekey="inputSearch"></input><!--placeholder="Search" -->
+                                        <asp:LinkButton runat="server" ID="lbSearch" OnClick="lbSearch_Click">
+                                      <i class="glyphicon glyphicon-search div-form-btn"></i>
+                                        </asp:LinkButton>
+
+                                    </asp:Panel>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+            
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <hr />
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %> - Web Vocabulary</p>
+                </footer>
+            </div>
+        </div>
+
+        <script>
+
+            $("#inputSearch").autocomplete({
+                source: function (request, responce) {
+                    $.ajax({
+                        type: "POST",
+                        url: "GetAutoCompleteData.ashx/LoadWords",
+                        data: {
+                            q: request.term
+                        },
+                        success: function (data) {
+
+                            responce($.map(data, function (item) {
+                                return { value: item.Name, Name: item.Name };
+                            }))
+                        }
+                    });
+                },
+                minLength: 3
+            });
+
+        </script>
+
+    </form>
+</body>
+</html>

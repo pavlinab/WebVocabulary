@@ -1,0 +1,293 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"] {
+    /*max-width: 280px;*/
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+    .body-content {
+        padding: 0;
+    }
+}
+@media (max-width:768px)
+{
+    
+}
+
+
+    /*******************************************/
+
+    .search-box {
+        box-sizing: border-box;
+        padding: 3px 5px;
+        background-color: white;
+        border: 1px solid #aeaeae;
+        vertical-align: middle;
+        border-radius: 12px;
+    }
+
+    .input-search {
+        border: none;
+    }
+
+    .box-sizing {
+        box-sizing: border-box;
+    }
+
+    .site-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    container-fluid {
+        /*height:100px;*/
+    }
+
+    .container-brand {
+        padding: 12px 4px 4px 4px;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+
+    .userIcon {
+        background-image: url("/Images/userGray.png");
+    }
+
+    .navbar-toggle #spIconSearch {
+        padding: 0px 4px;
+    }
+
+
+    .div-form{
+        float: none;
+    overflow: hidden;
+    padding-right: 30px;
+    position: relative;
+    }
+    .div-form-btn{
+        overflow: hidden;
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        vertical-align: top;
+    }
+    .delete-btn{
+        overflow: hidden;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        vertical-align: top;
+    }
+   #div-navbar-collapse-search > ul{
+       padding-top:15px;
+       padding-bottom:15px;
+
+   }
+   #searchButton{
+       padding-top:6px;
+       padding-bottom:6px;
+   }
+   #div-brand{
+       display:inline-block; 
+       width:300px;
+   }
+   #div-brand > a{
+       position:absolute; 
+       top:0px;
+       left:10px;
+       padding-top:6px;
+   }
+#div-brand-img {
+    background-image: url("/Images/header3.png");
+    width: 281px;
+    height: 40px;
+    overflow:hidden;
+    background-repeat:no-repeat;
+}
+@media screen and (min-width:768px) {/*768 751*/
+        #div-brand-img{
+       background-image:url("/Images/header2.png");
+       width:290px; 
+       height:98px;
+       overflow:hidden;
+       background-repeat:no-repeat;
+       margin-top:6px;
+   }
+           
+}
+@media screen and (min-width:964px) {
+    .margin-after {
+        margin-right: 5px;
+    }
+
+    .margin-before {
+        margin-left: 5px;
+    }
+}
+/**************************************************/
+
+.header-style{
+    /*background:url("themes/base/images/ui-bg_glass_85_dfeffc_1x400.png") repeat-x scroll 50% 50% #dfeffc;*/
+    background-color:#dfeffc;
+    border-bottom: 1px solid #6da8d5;
+    color: #2e6e9e;
+    font-weight: bold;
+
+    -moz-border-radius: 12px 12px 0px 0px;
+    -webkit-border-radius: 12px 12px 0px 0px;
+    border-radius: 12px 12px 0px 0px; /* future proofing */
+    -khtml-border-radius: 12px 12px 0px 0px; /* for old Konqueror browsers */
+}
+.container-border{
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px; /* future proofing */
+    -khtml-border-radius: 12px; /* for old Konqueror browsers */
+    border: 1px solid #6da8d5;
+}
+
+.odd-row-style{
+    background-color:aliceblue;
+    padding:4px;
+    border-bottom: 1px solid #6da8d5;
+}
+.even-row-style{
+    padding:4px;
+    border-bottom: 1px solid #6da8d5;
+}
+.formview-container-style{
+    padding:10px 0px;
+}
+.formview-subtitle-style{
+    background-color:aliceblue;
+    border-bottom: 1px solid #6da8d5;
+    color: #2e6e9e;
+}
+.body-content > row{
+    padding:0px !important;    
+}
+.clear{
+    clear:both;
+}
+.badge{
+    background-color:#66A0D4 !important;
+}
+.btn{
+    padding:4px 10px !important;
+}
+#divEdit > div{
+    padding: 0px;
+}
+
+.div-dropdown{
+    
+    border: 1px solid #ccc;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; /* future proofing */
+    -khtml-border-radius: 4px; /* for old Konqueror browsers */    
+    display: inline-block;    
+    padding:3px 2px;
+    width:100%;
+    position:relative;
+}
+.dropdownlist{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-color: transparent;
+    padding:0px 4px;
+    padding-left:0px;
+    /*background-image:url("/Images/arrow-bottom.png"); 
+    background-repeat:no-repeat;
+    background-position:97% 8px;*/
+    width:100%;
+}
+.dropdown-button{
+    background-image:url("/Images/arrow-bottom.png");
+    width:8px;
+    height:6px;
+    display:inline-block; 
+    position:absolute;
+    right:10px;
+    top:13px;
+}
+.align-center
+{
+    text-align:center;
+}
+
+.ui-widget{
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+label{
+    font-weight:normal;
+}
+/* Add category, Log in,*/
+.input-form label{
+    margin-bottom: 0;
+    padding: 7px 0px 0px 0px;
+}
+.input-form > div{
+    padding:0px;
+}
+.panel-body .col-md-12{
+    padding:0px;
+}
+.link-btn{
+    padding: 0.1em 1em;
+}
+.display-message-btns{
+    float:right;
+    vertical-align:middle;
+}
+.panel-heading a{
+    padding: 0.1em 1em;
+}
+.panel-heading input[type="image"]{
+    padding: 0.3em 1em;
+}
+.list-btns{
+    float: right;
+    margin-right: 6px;
+}
+.list-btns input{
+    margin-top:4.4px;
+}
+.user-search-box{
+    padding:0px;
+}
+.user-search-btn{
+    padding: 7.5px 12px !important;
+    font-size: 14px !important;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-left: -1px;
+}

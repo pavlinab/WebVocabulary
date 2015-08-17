@@ -1,0 +1,1283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{061CE58B-BBC7-4BE4-8F67-EB6C59F3F402}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebVocabulary2</RootNamespace>
+    <AssemblyName>WebVocabulary2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.7.1213\lib\45\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.2.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.1.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined, Version=1.11.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.11.2\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FreeTextBox, Version=3.3.1.12354, Culture=neutral, PublicKeyToken=5962a4e684a48b87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Controls\FreeTextBoxEditor\Framework-4-0\FreeTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.4\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.1\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="AddCategory.aspx" />
+    <Content Include="AddWord.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Controls\FreeTextBoxEditor\Framework-4-0\FreeTextBox.dll" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\FTB-FreeTextBox.js" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\FTB-ImageGallery.js" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\FTB-Pro.js" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\FTB-ToolbarItems.js" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\FTB-Utility.js" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\bold.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\bulletedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\buttons.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\buttons.png" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\copy.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\createlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\csharp.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\css\toolbarbutton.off.out.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\css\toolbarbutton.off.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\css\toolbarbutton.on.out.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\css\toolbarbutton.on.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\css\toolbarbutton.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\cut.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\delete.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\deletetablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\deletetablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\editstyle.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\edittable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\edittablecell.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\edittablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\fontbackcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\fontforecolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\iespellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\indent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertbutton.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertcheckbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertdate.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertdiv.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertdropdownlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertform.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertimage.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertimagefromgallery.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertlistbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertradiobutton.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\insertrule.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttablecolumnafter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttablecolumnbefore.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttablerowafter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttablerowbefore.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttextarea.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttextbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\inserttime.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\italic.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\justifycenter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\justifyfull.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\justifyleft.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\justifyright.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\mergecells.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\mergecolumns.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\mergerows.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\misc\toolbarbuttoncss.off.out.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\misc\toolbarbuttoncss.off.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\misc\toolbarbuttoncss.on.out.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\misc\toolbarbuttoncss.on.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\mode.design.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\mode.html.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\netspell.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\numberedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\outdent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\paste.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\preview.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\print.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\redo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\removeformat.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\save.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\selectall.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\separator.horizontal.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\separator.vertical.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\spacer.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\spellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\splitcells.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\strikethrough.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\bold.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\bulletedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\copy.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\createlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\cut.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\delete.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\deletetablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\deletetablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\fontbackcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\fontforecolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\indent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\insertdate.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\insertimage.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\insertimagefromgallery.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\insertrule.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\inserttable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\inserttablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\inserttablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\inserttime.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\italic.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\justifycenter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\justifyfull.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\justifyleft.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\justifyright.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\mergecells.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\mergecolumns.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\numberedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\outdent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\paste.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\print.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\redo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\removeformat.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\save.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\spellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\strikethrough.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\subscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\superscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\underline.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\undo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\unlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\wordclean.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\subs\wordcount.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\superscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbar.horizontal.background.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbar.horizontal.end.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbar.horizontal.start.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbar.vertical.background.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbar.vertical.end.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbar.vertical.start.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbarbutton.background.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbarbutton.down.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbarbuttoncss.off.out.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbarbuttoncss.off.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbarbuttoncss.on.out.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\toolbarbuttoncss.on.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\underline.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\undo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\unlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\wordclean.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\wordcount.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\ar-SA.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\ca-CA.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\ca-ES.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\cs-CZ.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\da-DK.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\de-DE.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\el-GR.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\en-US.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\es-ES.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\fa-IR.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\fr-FR.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\he-IL.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\hu-HU.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\it-IT.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\ja-JP.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\ko-kr.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\Languages.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\nb-NO.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\nl-NL.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\pl-PL.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\pt-pt.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\ro-RO.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\ru-ru.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\sk-SK.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\sv-se.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\zh-cn.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\Languages\zh-TW.xml" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\bold.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\bulletedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\copy.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\createlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\cut.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\delete.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\deletetablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\deletetablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\editstyle.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\edittable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\fontbackcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\fontforecolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\iespellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\indent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertbutton.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertcheckbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertdate.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertdiv.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertdropdownlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertform.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertimage.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertimagefromgallery.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertlistbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertradiobutton.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\insertrule.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttablecolumnafter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttablecolumnbefore.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttablerowafter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttablerowbefore.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttextarea.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttextbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\inserttime.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\italic.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\justifycenter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\justifyfull.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\justifyleft.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\justifyright.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\mergecells.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\mergerows.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\mode.design.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\mode.html.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\netspell.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\normal.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\normal.png" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\numberedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\outdent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\paste.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\preview.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\print.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\redo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\removeformat.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\save.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\selectall.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\separator.horizontal.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\spacer.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\spellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\strikethrough.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\bold.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\bulletedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\copy.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\createlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\cut.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\delete.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\deletetablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\deletetablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\fontbackcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\fontforecolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\indent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\insertdate.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\insertimage.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\insertimagefromgallery.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\insertrule.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\inserttable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\inserttablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\inserttablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\inserttime.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\italic.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\justifycenter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\justifyfull.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\justifyleft.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\justifyright.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\mergecells.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\mergerows.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\numberedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\outdent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\paste.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\print.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\redo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\removeformat.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\save.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\spellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\strikethrough.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\subscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\superscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\underline.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\undo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\unlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\wordclean.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\wordcount.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\superscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\toolbar.horizontal.end.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\toolbar.horizontal.start.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\underline.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\undo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\unlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\wordclean.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\wordcount.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\backcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\bold.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\bulletedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\copy.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\createlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\cut.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\delete.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\deletetablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\deletetablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\editstyle.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\edittable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\fontbackcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\fontforecolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\forecolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\iespellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\indent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertbutton.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertcheckbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertdate.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertdiv.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertdropdownlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertform.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertimage.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertimagefromgallery.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertradiobutton.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\insertrule.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\inserttable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\inserttablecolumnafter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\inserttablecolumnbefore.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\inserttablerowafter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\inserttablerowbefore.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\inserttextarea.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\inserttextbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\inserttime.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\italic.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\justifycenter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\justifyfull.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\justifyleft.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\justifyright.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\mode.design.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\mode.html.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\netspell.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\new.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\numberedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\outdent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\paste.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\paste2.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\preview.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\print.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\redo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\removeformat.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\save.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\selectall.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\separator.horizontal.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\strikethrough.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\subscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\superscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\toolbar.horizontal.background.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\toolbar.horizontal.end.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\toolbar.horizontal.end2.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\toolbar.horizontal.start.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\toolbarbuttoncss.off.normal.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\toolbarbuttoncss.off.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\toolbarbuttoncss.on.normal.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\toolbarbuttoncss.on.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\underline.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\undo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\unlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\Untitled-2.png" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\wordclean.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\bold.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\bold.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\bulletedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\bulletedlist.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\copy.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\copy.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\createlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\createlink.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\cut.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\cut.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\delete.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\delete.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\deletetablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\deletetablecolumn.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\deletetablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\deletetablerow.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\editstyle.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\edittable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\fontbackcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\fontbackcolorpicker.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\fontforecolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\fontforecolorpicker.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\forumColumnBackground.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\iespellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\iespellcheck.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\indent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\indent.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertbutton.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertcheckbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertdate.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertdate.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertdiv.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertdropdownlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertform.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertimage.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertimage.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertimagefromgallery.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertimagefromgallery.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertlistbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertradiobutton.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertrule.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\insertrule.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttable.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablecolumn.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablecolumnafter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablecolumnafter.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablecolumnbefore.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablecolumnbefore.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablerow.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablerowafter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablerowafter.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablerowbefore.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttablerowbefore.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttextarea.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttextbox.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttime.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\inserttime.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\italic.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\italic.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\justifycenter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\justifycenter.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\justifyfull.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\justifyfull.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\justifyleft.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\justifyleft.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\justifyright.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\justifyright.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\mergecells.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\mergecells.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\mergerows.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\mergerows.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\mode.design.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\mode.html.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\netspell.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\netspell.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\normal.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\normal.png" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\numberedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\numberedlist.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\bgcolor.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\bold.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\bold.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\borders.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\bulletedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\bulletedlist.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\changecase.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\changecase.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\copy.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\copy.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\createlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\createlink.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\cut.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\cut.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\delete.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\delete.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\deletetablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\deletetablecolumn.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\deletetablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\deletetablerow.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\details.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\find.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\find.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\fontbackcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\fontbackcolorpicker.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\indent.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertdate.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertdate.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertemail.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertemail.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertimage.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertimage.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertimagefromgallery.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertimagefromgallery.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertrule.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\insertrule.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\inserttable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\inserttable.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\inserttablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\inserttablecolumn.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\inserttablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\inserttablerow.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\inserttime.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\inserttime.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\italic.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\italic.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\justifycenter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\justifycenter.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\justifyfull.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\justifyfull.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\justifyleft.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\justifyleft.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\justifyright.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\justifyright.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\numberedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\numberedlist.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\outdent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\outdent.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\paste.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\paste.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\print.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\print.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\redo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\redo.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\removeformat.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\removeformat.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\save.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\save.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\spellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\spellcheck.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\strikethrough.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\strikethrough.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\subscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\subscript.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\superscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\superscript.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\toggleborders.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\toggledetails.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\toggledetails.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\underline.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\underline.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\undo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\undo.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\unlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\unlink.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\verse.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\verse.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\wordcount.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\wordcount.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\outdent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\outdent.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\paste.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\paste.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\preview.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\print.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\print.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\redo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\redo.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\removeformat.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\removeformat.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\save.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\save.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\selectall.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\separator.horizontal.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\spacer.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\spellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\spellcheck.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\strikethrough.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\strikethrough.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subscript.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\bold.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\bold.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\bulletedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\bulletedlist.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\copy.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\copy.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\createlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\createlink.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\cut.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\cut.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\delete.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\delete.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\deletetablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\deletetablecolumn.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\deletetablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\deletetablerow.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\fontbackcolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\fontbackcolorpicker.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\fontforecolorpicker.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\fontforecolorpicker.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\indent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\indent.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\insertdate.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\insertdate.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\insertimage.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\insertimage.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\insertimagefromgallery.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\insertimagefromgallery.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\insertrule.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\insertrule.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\inserttable.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\inserttable.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\inserttablecolumn.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\inserttablecolumn.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\inserttablerow.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\inserttablerow.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\inserttime.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\inserttime.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\italic.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\italic.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\justifycenter.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\justifycenter.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\justifyfull.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\justifyfull.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\justifyleft.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\justifyleft.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\justifyright.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\justifyright.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\mergecells.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\mergecells.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\mergerows.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\mergerows.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\numberedlist.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\numberedlist.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\outdent.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\outdent.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\paste.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\paste.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\print.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\print.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\redo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\redo.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\removeformat.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\removeformat.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\save.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\save.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\spellcheck.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\spellcheck.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\strikethrough.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\strikethrough.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\subscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\subscript.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\superscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\superscript.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\underline.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\underline.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\undo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\undo.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\unlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\unlink.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\wordclean.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\wordclean.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\wordcount.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\wordcount.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\superscript.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\superscript.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\toolbar.horizontal.end.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\toolbar.horizontal.start.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\underline.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\underline.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\undo.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\undo.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\unlink.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\unlink.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\wordclean.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\wordclean.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\wordcount.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\wordcount.over.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\utility\folder.big.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\utility\folder.small.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\utility\folder.up.gif" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\utility\image.gif" />
+    <Content Include="DisplayMessage.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\12_Delete-icon.png" />
+    <Content Include="Images\18_Delete-icon.png" />
+    <Content Include="Images\arrow-bottom.png" />
+    <Content Include="Images\header-line.png" />
+    <Content Include="Images\header1.png" />
+    <Content Include="Images\header2.png" />
+    <Content Include="Images\header3.png" />
+    <Content Include="Images\Mail-12.png" />
+    <Content Include="Images\userGray.png" />
+    <Content Include="MessageBox.aspx" />
+    <Content Include="NewMessage.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\Web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="DisplayWord.aspx" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\misc\buttonbackgrounds.psd" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\misc\Image-Normal.psd" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\misc\Picasa.ini" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\misc\ToolbarButton-Background.psd" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\images\Picasa.ini" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\subs\Thumbs.db" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\office2000\Thumbs.db" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\Picasa.ini" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeMac\Thumbs.db" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\old\Thumbs.db" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\subs\Thumbs.db" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\officeXP\Thumbs.db" />
+    <Content Include="Controls\FreeTextBoxEditor\FreeTextBox\utility\Thumbs.db" />
+    <Content Include="GetAutoCompleteData.ashx" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Results.aspx" />
+    <Content Include="ReviewUser.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.2.js" />
+    <Content Include="Scripts\jquery-ui-1.11.2.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Scripts\tinymce\license.txt" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example\dialog.html" />
+    <Content Include="Scripts\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Project_Readme.html" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Scripts\tinymce\langs\readme.md" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddWord.aspx.cs">
+      <DependentUpon>AddWord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddWord.aspx.designer.cs">
+      <DependentUpon>AddWord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayMessage.aspx.cs">
+      <DependentUpon>DisplayMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayMessage.aspx.designer.cs">
+      <DependentUpon>DisplayMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetAutoCompleteData.ashx.cs">
+      <DependentUpon>GetAutoCompleteData.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="MessageBox.aspx.cs">
+      <DependentUpon>MessageBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MessageBox.aspx.designer.cs">
+      <DependentUpon>MessageBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\DbInitializer.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\VocabularyContext.cs" />
+    <Compile Include="Models\Word.cs" />
+    <Compile Include="NewMessage.aspx.cs">
+      <DependentUpon>NewMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewMessage.aspx.designer.cs">
+      <DependentUpon>NewMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results.aspx.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Results.aspx.designer.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewUser.aspx.cs">
+      <DependentUpon>ReviewUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReviewUser.aspx.designer.cs">
+      <DependentUpon>ReviewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayWord.aspx.cs">
+      <DependentUpon>DisplayWord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayWord.aspx.designer.cs">
+      <DependentUpon>DisplayWord.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Site.Master.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Site.Master.bg.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.bg.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Results.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Results.aspx.bg.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\AddWord.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\AddWord.aspx.bg.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\AddCategory.aspx.resx" />
+    <Content Include="App_LocalResources\AddCategory.aspx.bg.resx" />
+    <Content Include="Account\App_LocalResources\Login.aspx.bg.resx" />
+    <Content Include="Account\App_LocalResources\Login.aspx.resx" />
+    <Content Include="App_LocalResources\MessageBox.aspx.resx" />
+    <Content Include="App_LocalResources\MessageBox.aspx.bg.resx" />
+    <Content Include="App_LocalResources\NewMessage.aspx.resx" />
+    <Content Include="App_LocalResources\NewMessage.aspx.bg.resx" />
+    <Content Include="App_LocalResources\DisplayMessage.aspx.resx" />
+    <Content Include="App_LocalResources\DisplayMessage.aspx.bg.resx" />
+    <Content Include="App_LocalResources\ReviewUser.aspx.resx" />
+    <Content Include="App_LocalResources\ReviewUser.aspx.bg.resx" />
+    <Content Include="Account\App_LocalResources\Register.aspx.resx" />
+    <Content Include="Account\App_LocalResources\Register.aspx.bg.resx" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1229</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1229/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
